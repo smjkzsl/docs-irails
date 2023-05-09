@@ -1,168 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
-        
-        
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>My Docs</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
-
-    <body class="homepage">
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href=".">My Docs</a>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>iRails Docs</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Getting Start";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> iRails Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Getting Start</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extras-commands">Extras commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#take-a-look">Take a look</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-file-generalyaml">configure file general.yaml</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#controller-file">controller file</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="controller/">controller</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="model.md">model</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="service.md">service</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="view.md">view</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">iRails Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Getting Start</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="welcome-to-irails">Welcome to IRAILS</h1>
+<h2 id="installation">Installation</h2>
+<ul>
+<li><code>pip install irails</code> - install irails</li>
+</ul>
 <h2 id="commands">Commands</h2>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><code>irails project [project-name(dir-name)]</code> - Create a new irails project.</li>
+<li><code>irails app [app-name(choose or input apps dir)]</code> - Example: <code>irails app admissions</code> Create a new irails app.</li>
+<li><code>irails run [--port port]</code> - Run project visit on <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>. </li>
 </ul>
 <h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
-            </div>
-        </div>
+<pre><code>|   main.py
++---apps                                ## Apps container (A project can have multiple containers)
+|   +---admissions                      ## App dir (An application container can have multiple applications)
+|   |   |   __init__.py                 
+|   |   +---controllers                 ## Controller files
+|   |   |   |   home_controller.py      ## Controller class file,it's look like `class HomeController`
+|   |   |   |   __init__.py
+|   |   +---locales                     ## I18n locales dir,use command `apps/app:$ iralis i18n gettext` will auto generate items
+|   |   +---models                      ## Database models files(if you use some database support)
+|   |   |       __init__.py
+|   |   +---services                    ## Module for business logic processing
+|   |   +---tests                       ## Unit testting
+|   |   +---views                       ## Static view files (use `Jinja2` Template)
+|   |   |   |   layout.html
+|   |   |   |
+|   |   |   +---home                    ## The controller action's static file(name is same to the controller's class name)
+|   |   |   |       home.css            
+|   |   |   |       home.html           ## Static file corresponding to action(name is same to the controller's method name)
++---configs                             ## Project configure dir
+|       alembic.ini                     ## Alembic configure file (Generally, there is no need to change, used the database migration)
+|       casbin-adapter.csv              ## Casbin auth module config adapter file()
+|       casbin-model.conf               ## Casbin auth config model
+|       database.yaml                   ## Configure for database support
+|       general.yaml                    ## General configures
+|       session.yaml                    ## Session configures
+|
++---data
+|   +---alembic
+|   |   \---versions
+|   \---db
+|
++---public                              ## Public dir (will mounted to the '/public' url)
+|   |   error_404.html                  ## Error page ...
+|   |   error_500.html
+|
++---uploads                             ## Others dir(if your need or not)
+</code></pre>
+<h2 id="extras-commands">Extras commands</h2>
+<ul>
+<li><code>irails i18n gettext</code> --generate i18n in irails app dir</li>
+</ul>
+<h2 id="take-a-look">Take a look</h2>
+<ul>
+<li>
+<h4 id="configure-file-generalyaml">configure file <code>general.yaml</code></h4>
+<pre><code>app:
+    appdir:
+    - apps
+    enabled: null
+root: apps.root
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = ".",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+cors:
+    allow_credentials: true
+    allow_headers:
+        - '*'
+    allow_methods:
+        - '*'
+    allow_origins:
+        - '*'
+debug: true
+errors:
+    error_404_page: '{ROOT.public_dir}/error_404.html'
+    error_500_page: '{ROOT.public_dir}/error_500.html'
+log:
+    file: ''
+    level: DEBUG
+    name: iRails
+public_dir: ./public
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+view:
+    jinja2:
+        block_end_string: '%}'
+        block_start_string: '{%'
+        comment_end_string: '#}'
+        comment_start_string: '{#'
+        variable_end_string: '}'
+        variable_start_string: ${
+    static_format:
+    - vue
+    - html
+i18n:
+    lang: ['zh']
+    url_lang_key: 'lang'
+</code></pre>
+</li>
+<li>
+<h4 id="controller-file">controller file</h4>
+<pre><code>from irails import api_router,api,Request,Response,BaseController,application
+
+@api_router(path='/{controller}',auth='none')
+class AdminController(BaseController): 
+    @api.get("/index")
+    def index(self):
+        """
+        :title Admin
+        """
+        return self.view()
+</code></pre>
+</li>
+</ul>
+              
             </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="controller/" class="btn btn-neutral float-right" title="controller">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
         </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="controller/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
-    </body>
+</body>
 </html>
 
 <!--
 MkDocs version : 1.4.3
-Build Date UTC : 2023-05-09 09:50:18.546285+00:00
+Build Date UTC : 2023-05-09 15:46:08.433353+00:00
 -->

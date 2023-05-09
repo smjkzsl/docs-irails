@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>controller - iRails Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "controller";
+        var mkdocs_page_input_path = "controller.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> iRails Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Getting Start</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">controller</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#defines">defines</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#route">route</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#define-a-root-url">define a root URL</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#actions">Actions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#api-decorator">@api decorator</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#builtin-supports-of-controller">Builtin supports of controller</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../model.md">model</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../service.md">service</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../view.md">view</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">iRails Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>controller</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="controller">Controller</h2>
+<pre><code>The controller is a web application entry point, 
+a MVC applications must input requests into the controller for processing
+
+Commonly used must be imported:
+
+    from irails import route,api,Request,Response,BaseController,application
+</code></pre>
+<h3 id="defines">defines</h3>
+<pre><code>    @route(path='/{controller}',auth='none')
+    class ExampleController(BaseController):
+        pass
+</code></pre>
+<ul>
+<li>controller class must inherit <code>BaseController</code></li>
+<li>
+<p>controller must use <code>@route</code> decorator</p>
+<ul>
+<li>
+<h4 id="route">route</h4>
+<p>@route(path:str="", version:str="",**allargs) </p>
+<p>The parameter path specifies the URL format, such as <code>app/{controller}/{version}</code>, which will be prefixed with <code>app/home/v1.0</code> as the route. Actions within the controller will be connected to this route, as defined by the controller
+Home action, the URL address of home is <code>/app/home/v1.0/home</code>, and version specifies the version information. If this parameter is provided, the path parameter will automatically carry the <code>{controller}</code> flag to define this route. For more information on auth, please refer to the authentication system.</p>
+</li>
+<li>
+<h4 id="define-a-root-url">define a root URL</h4>
+<p>@route() #use empty params list to </p>
+<pre><code>@route()
+class HomeController(BaseController)
+    @api.get("/")
+    def home(self):
+        return self.view()
+</code></pre>
+<p>it's will route to home method of the url '/'</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="actions">Actions</h3>
+<ul>
+<li>
+<p>Defining an action is like defining a class instance method, 
+    but it must use @ API decorators such as <code>@api.get</code>, <code>@api.post</code>, etc</p>
+<ul>
+<li>
+<h4 id="api-decorator">@api decorator</h4>
+<p><code>@api.get</code>
+Use http method <code>GET</code> to define a route</p>
+<p><code>@api.post</code>
+Use http method <code>POST</code> to define a route</p>
+<p><code>@api.head</code>   ditto... but method is <code>HEAD</code></p>
+<p><code>@api.put</code>    ditto... but method is <code>PUT</code></p>
+<p><code>@api.delete</code> ditoo... but method is <code>DELETE</code></p>
+<p><code>@api.patch</code> ditoo... but method is <code>PATCH</code></p>
+<p><code>@api.trace</code>  ditoo... but method is <code>TRACE</code></p>
+<p><code>@api.options</code>  ditoo... but method is <code>OPTIONS</code></p>
+<p><code>@api.websocket</code>  define a websocket route. Example:</p>
+<pre><code>@api.websocket("/chat/{client_id}")
+async def websocket_endpoint(self, websocket: WebSocket,client_id: int):
+    await websocket.accept()
+    websockets[client_id]=(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            await websocket.send_text(f"You wrote: {data}" )
+            for clientid in websockets:
+                if client_id!=clientid:
+                    await websockets[clientid].send_text(f"Client #{client_id} says: {data}")
+
+    except WebSocketDisconnect:
+        websockets.remove(websocket)
+        for connection in websockets:
+            await connection.send_text(f"Client #{client_id} left the chat")
+</code></pre>
+<p><code>@api.http</code> ditoo... but it's provide param <code>methods</code>is a list like <code>['GET','POST']</code></p>
+<p>with param <code>auth</code> ,also see the authentication system </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="builtin-supports-of-controller">Builtin supports of controller</h3>
+<ul>
+<li>
+<pre><code>self.request #the request object  
+    self.request['url'] #the client request URL object
+    self.request.headers['accept-languages']
+</code></pre>
+</li>
+<li>
+<pre><code>self.session #the session object Dict
+    self.session['key1'] = "K1" #set a session value
+    v = self.session['key1'] #get a session value
+    del self.session['key1'] #delete a session
+</code></pre>
+</li>
+<li>
+<pre><code>self.cookies #the cookies object Dict
+    self.cookies.get('a',1)
+    self.cookies['a'] = self.cookies['a'] + 1
+    del self.cookies['a']
+</code></pre>
+</li>
+<li>
+<pre><code>self.get_param #get request param from any where
+    self.get_param("username") #any use form'url query'post value
+    self['password'] #same to self.get_param("password")
+</code></pre>
+</li>
+<li>
+<pre><code>self.view #the Jinja2 Templace response 
+    return self.view() #no param is render the default html file localed on `views/{controller_name}/{action_name}.html`
+    """params: content:str="",view_path:str="", format:str="html", context: dict={},local2context:bool=True,**kwargs"""
+    return self.view("Hello world") #just return `hello world` and status code is 200
+
+    any value return on actions
+
+             return {"foo":"bar"} 
+             return "HEELO"
+
+    it  will convert Response object automatic
+</code></pre>
+</li>
+<li>
+<pre><code>    await self._save_upload_file(self,file:File)
+</code></pre>
+</li>
+<li>
+<pre><code>    self._verity_successed(self,user,msg="User authentication successed!",redirect='/')
+
+        also see the authentication system
+</code></pre>
+</li>
+<li>
+<pre><code>    self._verity_error(self,msg="User authentication failed!")
+
+        also see the authentication system
+</code></pre>
+</li>
+<li>
+<pre><code>    self._user_logout(self,msg="You are successed logout!",redirect='/')
+
+        also see the authentication system
+</code></pre>
+</li>
+<li>
+<pre><code>    self.redirect(self,url ,statu_code=StateCodes.HTTP_303_SEE_OTHER)
+</code></pre>
+</li>
+<li>
+<pre><code>    self.flash
+
+        Flash inspiration comes from the ROR, which is saved in the session. When its value is set, 
+        it will be cleared when the next request is completed, so it is generally used to save one-time notifications,
+        such as login success notifications
+
+        self.flash = "you are success logined!"
+</code></pre>
+</li>
+<li>
+<pre><code>    self.log(msg:str)
+    print log infomation to console or log file.
+    for more infomation for log,see config.log
+</code></pre>
+</li>
+<li>
+<pre><code>    self._(text:str)
+    Multilingual translation
+</code></pre>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Getting Start"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
