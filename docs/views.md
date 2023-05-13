@@ -11,7 +11,7 @@
                 comment_end_string: '#}'
                 comment_start_string: '{#'
                 variable_end_string: '}'
-                variable_start_string: ${
+                variable_start_string: '${'
             static_format:   ## This section defines the file formats that will be rendered using Jinja2. If not listed in this list, rendering will not be performed           
             - vue
             - html
