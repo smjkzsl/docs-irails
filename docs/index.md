@@ -8,18 +8,18 @@
 
 ## Commands
 
-* `irails project [project-name(dir-name)]` - Create a new irails project.
+* `irails project [project-name(dir-name)]`         - Create a new irails project.
 * `irails app [app-name(choose or input apps dir)]` - Example: `irails app admissions` Create a new irails app.
-* `irails run [--port port]` - Run project visit on <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>. 
+* `irails run [--host host] [--port port]`          - Run project visit on <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>. 
+* `irails controller [actions...]`                  - generate a controller with given actions(if no given,defalut is **index**). 
  
 
 ## Project layout
 
  
-    |   main.py
+    |   main.py                             ## Project entry point,may use `python main.py` to run 
     +---apps                                ## Apps container (A project can have multiple containers)
-    |   +---admissions                      ## App dir (An application container can have multiple applications)
-    |   |   |   __init__.py                 
+    |   +---admissions                      ## App dir (An application container can have multiple applications)       
     |   |   +---controllers                 ## Controller files
     |   |   |   |   home_controller.py      ## Controller class file,it's look like `class HomeController`
     |   |   |   |   __init__.py
@@ -54,7 +54,8 @@
     +---uploads                             ## Others dir(if your need or not)
  
 ## Extras commands
-* `irails i18n gettext` --generate i18n in irails app dir
+* `irails i18n gettext`  --generate i18n in irails app dir
+* `irails shell`         --run python interpreter with buildin support contexts 
 ## Take a look
 * #### configure file `general.yaml`
 

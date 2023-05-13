@@ -94,6 +94,8 @@
             self.session['key1'] = "K1" #set a session value
             v = self.session['key1'] #get a session value
             del self.session['key1'] #delete a session
+        For the configuration of the session, please refer to the session section of the general.yaml file
+
 * 
         self.cookies #the cookies object Dict
             self.cookies.get('a',1)
@@ -151,9 +153,10 @@
                 self.flash = "you are success logined!"
 
 * 
+
         self.log(msg:str)
-        print log infomation to console or log file.
-        for more infomation for log,see config.log
+        print log infomation to console or log file(if configured in general.yaml).
+        for more infomation for log,see irails.log module
 
 * 
         self._(text:str)
