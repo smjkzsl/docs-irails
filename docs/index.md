@@ -1,6 +1,7 @@
 # Welcome to IRAILS 
 
- 
+IRAILS is not just an ordinary imitation of Ruby on rails, but based on the characteristics of the Python language itself, combined with rich Python class libraries, it refuses to create wheels repeatedly, and can achieve web development with minimal code and configuration, making Python web development fast and powerful, and can be easily deployed on various platforms.
+The design concept of IRails refers to some RORs, but it has its own soul. It does not pursue the ultimate configuration and development, but rather appropriate configuration and development. Currently, it is in a preview version and will continue to improve in the future.
 
 ## Installation  
 
@@ -12,6 +13,7 @@
 * `irails app [app-name(choose or input apps dir)]` - Example: `irails app admissions` Create a new irails app.
 * `irails run [--host host] [--port port]`          - Run project visit on <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>. 
 * `irails controller [actions...]`                  - generate a controller with given actions(if no given,defalut is **index**). 
+* `irails model [columns...]`                       - generate a model(and model's service and tests) with given columns(if no given,defalut is **id**). 
  
 
 ## Project layout
@@ -56,6 +58,7 @@
 ## Extras commands
 * `irails i18n gettext`  --generate i18n in irails app dir
 * `irails shell`         --run python interpreter with buildin support contexts 
+* `irails test`          --run project tests 
 ## Take a look
 * #### configure file `general.yaml`
 
